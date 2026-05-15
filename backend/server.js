@@ -24,6 +24,8 @@ require('./models/Citizen');
 
 // Routes
 const authRoutes = require('./routes/authRoutes');
+const complaintRoutes = require('./routes/complaintRoutes');
+app.use('/api/complaints', complaintRoutes);
 app.use('/api/auth', authRoutes);
 
 // Test route
