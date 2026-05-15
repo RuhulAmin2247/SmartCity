@@ -21,6 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Models — আগে import করতে হবে
 require('./models/Citizen');
+require('./models/Payment'); 
 
 // Routes
 const authRoutes = require('./routes/authRoutes');
