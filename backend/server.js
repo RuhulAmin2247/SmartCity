@@ -11,8 +11,10 @@ const server = http.createServer(app);
 
 // Socket.io setup
 const io = new Server(server, {
+  
   cors: { origin: 'http://localhost:3000', methods: ['GET', 'POST'] }
 });
+app.set('io', io);
 
 // Middleware
 app.use(cors());
@@ -27,6 +29,8 @@ require('./models/Payment');
 const authRoutes = require('./routes/authRoutes');
 const complaintRoutes = require('./routes/complaintRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
+const emergencyRoutes = require('./routes/emergencyRoutes');
+app.use('/api/emergency', emergencyRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/complaints', complaintRoutes);
 app.use('/api/auth', authRoutes);
