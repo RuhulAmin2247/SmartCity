@@ -31,6 +31,8 @@ const complaintRoutes = require('./routes/complaintRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
 const emergencyRoutes = require('./routes/emergencyRoutes');
 const noticeRoutes = require('./routes/noticeRoutes');
+const dashboardRoutes = require('./routes/dashboardRoutes');
+app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/notices', noticeRoutes);
 app.use('/api/emergency',emergencyRoutes);
 app.use('/api/payments', paymentRoutes);
